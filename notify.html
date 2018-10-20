@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="notify.css">
+	<title>Notify V1</title>
+</head>
+<body>
+	<button type="button" data-type="success">Tip 1 (Başarılı)</button>
+	<button type="button" data-type="warning">Tip 2 (Uyarı)</button>
+	<button type="button" data-type="danger">Tip 3 (Hatalı)</button>
+	<button type="button" data-type="info">Tip 4 (Bilgi)</button>
+
+	<script src="jquery-3.2.1.min.js"></script>
+	<script src="notify.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$('button').click(function() {
+				var _msg = $(this).html();
+				var _type = $(this).data('type');
+				new notify({
+					message: _msg,
+					type: _type,
+				});
+			});
+		});
+	</script>
+</body>
+</html>
